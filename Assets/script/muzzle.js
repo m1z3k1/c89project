@@ -13,4 +13,6 @@ function Update () {
          attack.transform.parent = this.transform;
          attack.BroadcastMessage("setSpeed",SendMessageOptions.DontRequireReceiver);
     }
+    var mouse : Vector3 = new Vector3(Input.mousePosition.x,0,Input.mousePosition.z);
+
 }

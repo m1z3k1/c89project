@@ -16,4 +16,3 @@ var verticalVec : float;
         super();
     }
 }
-

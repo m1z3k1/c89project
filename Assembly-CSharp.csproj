@@ -45,8 +45,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\Attack\AttackObject.cs" />
      <Compile Include="Assets\script\Attack\bullet.cs" />
      <Compile Include="Assets\script\Attack\lazer.cs" />
+     <Compile Include="Assets\script\Unit\bullel.cs" />
+     <Compile Include="Assets\script\Unit\enemy.cs" />
      <Compile Include="Assets\script\Unit\muzzle.cs" />
      <Compile Include="Assets\script\Unit\playerObject.cs" />
      <Compile Include="Assets\script\Unit\unit.cs" />

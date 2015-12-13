@@ -7,7 +7,7 @@ public class playerObject : unit {
 	public override void Start () {
         base.Start();
         speed = 5;
-        
+        hitpoint = 20;
 	}
 	
 	// Update is called once per frame

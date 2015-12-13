@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bullet : MonoBehaviour {
+public class bullet : AttackObject {
 
     public float speed;
 
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
         
 	}
 
-    void StartAttack()
+    public override void StartAttack()
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         Transform muzzle = this.transform.parent;
@@ -18,10 +18,17 @@ public class bullet : MonoBehaviour {
         Vector3 dir = (muzzle.position - bullel.position).normalized;
         rb.velocity = dir * speed;
         this.transform.parent = null;
+        attackPoint = 10;
     }
 	
 	// Update is called once per frame
-	void Update () {
+	public override void Update () {
 	
 	}
+
+    public override void Attack(GameObject targetObject)
+    {
+        base.Attack(targetObject);
+        Destroy(this.gameObject);
+    }
 }

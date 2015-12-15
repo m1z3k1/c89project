@@ -31,6 +31,14 @@ public class bullel : MonoBehaviour {
         }
 	}
 
+    public void fireCheck(GameObject muzzle)
+    {
+        if (fire)
+        {
+            muzzle.BroadcastMessage("fire");
+        }
+    }
+
     public void SetFire()
     {
         fire = true;

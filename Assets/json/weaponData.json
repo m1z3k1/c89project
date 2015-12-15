@@ -1,0 +1,35 @@
+{
+  "武器名":{
+    "attack":"int型 攻撃力",
+    "other parameter":"処理に必要な値",
+    "next":[{
+      "name":"強化後の武器名",
+      "exp":"int型 強化に必要な経験値"
+    }]
+  },
+  "bullet":{
+    "attack":10,
+    "speed":5,
+    "next":[
+      {
+        "name":"burst bullet",
+        "exp":70
+      }]
+  },
+  "Lazer":{
+    "attack":1,
+    "range":50,
+    "next":[{
+      "name":"twinLazer",
+      "exp":50
+    },{
+      "name":"bigLazer",
+      "exp":80
+    }]
+  },
+  "twinLazer":{
+    "attack":2,
+    "range":50,
+    "next":[]
+  }
+}

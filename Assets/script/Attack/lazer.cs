@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class lazer : AttackObject {
+public class lazer : weapon {
 
     private LineRenderer lineRenderer;
-    private float baseRange = 50;
+    private float baseRange;
     private float range;
     private Transform muzzle;
     private Vector3 dir;
@@ -18,7 +18,8 @@ public class lazer : AttackObject {
 
     public override void StartAttack (){
         base.StartAttack();
-        time = 4;
+        time = (float)weaponData["time"];
+        baseRange = (float)weaponData["range"];
         range = baseRange;
         //LineRendererオブジェクトを作成し、lineRendererを取得
         lineRenderer = gameObject.GetComponent<LineRenderer>();
@@ -29,7 +30,7 @@ public class lazer : AttackObject {
         lineRenderer.SetVertexCount(2);
         Transform bullel  = muzzle.parent;
         dir = (muzzle.position - bullel.position).normalized;
-        attackPoint = 1;
+        attackPoint = (float)weaponData["attack"] * Time.deltaTime;
     }
 	
 	// Update is called once per frame

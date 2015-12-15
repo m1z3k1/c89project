@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bullet : AttackObject {
-
-    public float speed;
-
+public class bullet : weapon
+{
 	// Use this for initialization
 	public override void Start () {
-        
+        base.Start();
 	}
 
     public override void StartAttack()
     {
+        base.StartAttack();
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         Transform muzzle = this.transform.parent;
         Transform bullel = muzzle.transform.parent;
         Vector3 dir = (muzzle.position - bullel.position).normalized;
+        float speed = (float)weaponData["speed"];
         rb.velocity = dir * speed;
         this.transform.parent = null;
-        attackPoint = 10;
+        attackPoint = (float)weaponData["attack"];
     }
 	
 	// Update is called once per frame

@@ -15,13 +15,18 @@ public class muzzle : MonoBehaviour {
 	void Update () {
         if (transform.parent.tag == "Player" && Input.GetButtonDown("Fire1"))
         {
-            GameObject attack = (GameObject)Instantiate(attackObject,transform.position,transform.rotation);
-            attack.transform.parent = this.transform;
-            attack.BroadcastMessage("StartAttack", SendMessageOptions.DontRequireReceiver);
+            transform.parent.gameObject.BroadcastMessage("fireCheck",gameObject);
         }
         else
         {
             //TODO enemy attack
         }
 	}
+
+    public void fire()
+    {
+        GameObject attack = (GameObject)Instantiate(attackObject, transform.position, transform.rotation);
+        attack.transform.parent = this.transform;
+        attack.BroadcastMessage("StartAttack", SendMessageOptions.DontRequireReceiver);
+    }
 }

@@ -18,6 +18,7 @@
   },
   "Lazer":{
     "attack":1,
+	"time":4,
     "range":50,
     "next":[{
       "name":"twinLazer",

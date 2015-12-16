@@ -18,8 +18,8 @@ public class lazer : weapon {
 
     public override void StartAttack (){
         base.StartAttack();
-        time = (float)weaponData["time"];
-        baseRange = (float)weaponData["range"];
+        time = (long)weaponData["time"];
+        baseRange = (long)weaponData["range"];
         range = baseRange;
         //LineRendererオブジェクトを作成し、lineRendererを取得
         lineRenderer = gameObject.GetComponent<LineRenderer>();
@@ -29,8 +29,8 @@ public class lazer : weapon {
         lineRenderer.enabled = true;
         lineRenderer.SetVertexCount(2);
         Transform bullel  = muzzle.parent;
-        dir = (muzzle.position - bullel.position).normalized;
-        attackPoint = (float)weaponData["attack"] * Time.deltaTime;
+        //dir = (muzzle.position - bullel.position).normalized;
+        attackPoint = (long)weaponData["attack"] * Time.deltaTime;
     }
 	
 	// Update is called once per frame

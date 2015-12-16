@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{C3FDDCAD-8E3F-70C7-EC44-8FA5CCA2A448}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -46,23 +45,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\MiniJSON.cs" />
-    <Compile Include="Assets\script\Attack\bullet.cs" />
-    <Compile Include="Assets\script\Attack\lazer.cs" />
-    <Compile Include="Assets\script\Attack\weapon.cs" />
-    <Compile Include="Assets\script\Unit\bullel.cs" />
-    <Compile Include="Assets\script\Unit\enemy.cs" />
-    <Compile Include="Assets\script\Unit\muzzle.cs" />
-    <Compile Include="Assets\script\Unit\playerObject.cs" />
-    <Compile Include="Assets\script\Unit\unit.cs" />
-    <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
-    <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\script\Attack\bullet.cs" />
+     <Compile Include="Assets\script\Attack\lazer.cs" />
+     <Compile Include="Assets\script\Attack\weapon.cs" />
+     <Compile Include="Assets\script\Unit\bullel.cs" />
+     <Compile Include="Assets\script\Unit\enemy.cs" />
+     <Compile Include="Assets\script\Unit\muzzle.cs" />
+     <Compile Include="Assets\script\Unit\playerObject.cs" />
+     <Compile Include="Assets\script\Unit\unit.cs" />
+     <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
+     <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{D545A061-4729-DF9E-A7E4-2B797F7D13D5}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -72,4 +74,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>

@@ -15,10 +15,10 @@ public class bullet : weapon
         Transform muzzle = this.transform.parent;
         Transform bullel = muzzle.transform.parent;
         Vector3 dir = (muzzle.position - bullel.position).normalized;
-        float speed = (float)weaponData["speed"];
+        float speed = (long)weaponData["speed"];
         rb.velocity = dir * speed;
         this.transform.parent = null;
-        attackPoint = (float)weaponData["attack"];
+        attackPoint = (long)weaponData["attack"];
     }
 	
 	// Update is called once per frame

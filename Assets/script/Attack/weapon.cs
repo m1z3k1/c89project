@@ -28,7 +28,7 @@ public class weapon : MonoBehaviour {
         string weaponDataString = weaponInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allWeaponData = (IDictionary)Json.Deserialize(weaponDataString);
         string attackName = gameObject.transform.name;
-        attackName = attackName.Substring(attackName.IndexOf("("));
+        attackName = attackName.Replace("(Clone)","");
         weaponData = (IDictionary)allWeaponData[attackName];
         Debug.Log(attackName);
     }

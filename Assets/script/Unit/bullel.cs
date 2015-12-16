@@ -23,7 +23,7 @@ public class bullel : MonoBehaviour {
 
             // マウスから矢印へのベクトルを正規化  (2)
             Vector3 diff = mousePos - transform.position;
-            Vector3 norm = diff.normalized;
+            //Vector3 norm = diff.normalized;
 
             // マウスの方向を向かせる (4)
             float deg = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;

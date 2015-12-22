@@ -1,14 +1,24 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{8F8AD7C9-33AB-8E32-A384-E6958F13E7EA}") = "c89project", "Assembly-CSharp-firstpass.csproj", "{2396FD10-F989-0FFF-36F4-DD80B79B6E7F}"
+EndProject
+Project("{8F8AD7C9-33AB-8E32-A384-E6958F13E7EA}") = "c89project", "Assembly-CSharp.csproj", "{6035583C-265D-3028-8971-AD2E1B01CFF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{2396FD10-F989-0FFF-36F4-DD80B79B6E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2396FD10-F989-0FFF-36F4-DD80B79B6E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2396FD10-F989-0FFF-36F4-DD80B79B6E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2396FD10-F989-0FFF-36F4-DD80B79B6E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6035583C-265D-3028-8971-AD2E1B01CFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6035583C-265D-3028-8971-AD2E1B01CFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6035583C-265D-3028-8971-AD2E1B01CFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6035583C-265D-3028-8971-AD2E1B01CFF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +42,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal

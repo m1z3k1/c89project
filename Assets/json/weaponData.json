@@ -9,7 +9,7 @@
   },
   "bullet":{
     "attack":10,
-    "speed":5,
+    "speed":50,
     "next":[
       {
         "name":"burst bullet",

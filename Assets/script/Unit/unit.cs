@@ -23,8 +23,13 @@ public class unit : MonoBehaviour {
     {
         hitpoint -= attack;
         if(hitpoint <= 0){
-            Destroy(this.gameObject);
+            this.DestroyEvent();
         }
+    }
+
+    virtual protected void DestroyEvent()
+    {
+        Destroy(this.gameObject);
     }
 
     void OnCollisionEnter(Collision collision)

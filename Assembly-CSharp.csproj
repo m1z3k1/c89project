@@ -53,6 +53,11 @@
      <Compile Include="Assets\script\Unit\muzzle.cs" />
      <Compile Include="Assets\script\Unit\playerObject.cs" />
      <Compile Include="Assets\script\Unit\unit.cs" />
+     <Compile Include="Assets\script\system\EnemyManeger.cs" />
+     <Compile Include="Assets\script\system\GameSystem.cs" />
+     <Compile Include="Assets\script\system\MenuSystem.cs" />
+     <Compile Include="Assets\script\system\ResultSystem.cs" />
+     <Compile Include="Assets\script\system\TitleSystem.cs" />
      <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
      <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
  <Reference Include="UnityEngine.UI">

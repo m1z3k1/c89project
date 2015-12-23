@@ -23,7 +23,7 @@ public class weapon : MonoBehaviour {
     public virtual void StartAttack()
     {
         gameObject.transform.tag = "Attack";
-        FileInfo fi = new FileInfo(Application.dataPath + "/json/weaponData.json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/weaponData.json");//Jsonファイルの読み込み
         StreamReader weaponInfo = new StreamReader(fi.OpenRead());
         string weaponDataString = weaponInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allWeaponData = (IDictionary)Json.Deserialize(weaponDataString);

@@ -6,21 +6,30 @@ using MiniJSON;
 
 public class playerObject : unit {
 
-    private GameObject[] bullels;
+    
 
 	// Use this for initialization
 	public override void Start () {
         base.Start();
         speed = 5;
         hitpoint = 20;
-        /*FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
         StreamReader bullelInfo = new StreamReader(fi.OpenRead());
         string bullelDataString = bullelInfo.ReadToEnd();//Jsonファイルをstringに変換
-        IDictionary allWeaponData = (IDictionary)Json.Deserialize(bullelDataString);
-        for(int bullelNumber = 1;bullelNumber < 7;bullelNumber++){
-            bullels[bullelNumber].transform.name = "bullel" + bullelNumber;
-            GameObject setBullel = Instantiate(bullels[bullelNumber]);
-        }*/
+        IDictionary allBullelData = (IDictionary)Json.Deserialize(bullelDataString);
+        allBullelData = (IDictionary)allBullelData["player"];
+        for(int bullelNumber = 1;bullelNumber < 3;bullelNumber++){
+            IDictionary bullelDataNumber = (IDictionary)allBullelData["bullel" + bullelNumber];
+            Debug.Log((string)bullelDataNumber["name"]);
+            GameObject bullelData = Resources.Load<GameObject>("prefabs/attack/bullel/" + (string)bullelDataNumber["name"]);
+            float positionX = (float)((long)bullelDataNumber["positionX"]);
+            float positionY = (float)((long)bullelDataNumber["positionY"]);
+            Vector3 position = new Vector3(positionX, positionY, 0);
+            GameObject setBullel = (GameObject)Instantiate(bullelData,transform.position,transform.rotation);
+            setBullel.transform.parent = this.transform;
+            setBullel.transform.position = position;
+            setBullel.transform.name = "bullel" + bullelNumber;
+        }
 	}
 	
 	// Update is called once per frame

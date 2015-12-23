@@ -1,4 +1,10 @@
 sceneSetups:
-- path: Assets/protoGame.unity
+- path: Assets/scene/title.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scene/title.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scene/title.unity
   isLoaded: 1
   isActive: 1

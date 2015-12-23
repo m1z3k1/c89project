@@ -13,14 +13,14 @@ public class playerObject : unit {
         base.Start();
         speed = 5;
         hitpoint = 20;
-        gameObject.transform.tag = "Attack";
-        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
+        /*FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
         StreamReader bullelInfo = new StreamReader(fi.OpenRead());
         string bullelDataString = bullelInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allWeaponData = (IDictionary)Json.Deserialize(bullelDataString);
         for(int bullelNumber = 1;bullelNumber < 7;bullelNumber++){
             bullels[bullelNumber].transform.name = "bullel" + bullelNumber;
-        }
+            GameObject setBullel = Instantiate(bullels[bullelNumber]);
+        }*/
 	}
 	
 	// Update is called once per frame
@@ -28,4 +28,10 @@ public class playerObject : unit {
         vec =  new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
         base.Update();      
 	}
+
+    protected override void DestroyEvent()
+    {
+        GameObject.Find("System").gameObject.BroadcastMessage("GameEnd");
+        base.DestroyEvent();
+    }
 }

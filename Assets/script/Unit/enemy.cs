@@ -14,4 +14,10 @@ public class enemy : unit {
     {
         base.Update();
     }
+
+    protected override void DestroyEvent()
+    {
+        GameObject.Find("System/enemyManeger").gameObject.BroadcastMessage("DestoryEnemy");
+        base.DestroyEvent();
+    }
 }

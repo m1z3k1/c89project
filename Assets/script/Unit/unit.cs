@@ -6,7 +6,7 @@ public class unit : MonoBehaviour {
     protected Vector3 vec;
     protected float speed;
     private Rigidbody rb;
-    protected int hitpoint;
+    protected float hitpoint;
 
 	// Use this for initialization
 	virtual public void Start () {
@@ -19,9 +19,10 @@ public class unit : MonoBehaviour {
         rb.velocity = vec * speed;
 	}
 
-    public void Damage(int attack)
+    public void Damage(float attack)
     {
         hitpoint -= attack;
+        Debug.Log(hitpoint);
         if(hitpoint <= 0){
             this.DestroyEvent();
         }

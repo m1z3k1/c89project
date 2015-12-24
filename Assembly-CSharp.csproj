@@ -45,6 +45,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\TileDraw\Scripts\Assets\Entity.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Assets\EntitySet.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Assets\IAsset.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Assets\Set.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Assets\TextureAsset.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Assets\TileSet.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Map\Cell.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Map\CellFactory.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Map\MapEditing.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Map\MapManager.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Map\Tile.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Util\CreatePlane.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Util\Enums.cs" />
+     <Compile Include="Assets\TileDraw\Scripts\Util\Util.cs" />
      <Compile Include="Assets\script\Attack\bullet.cs" />
      <Compile Include="Assets\script\Attack\lazer.cs" />
      <Compile Include="Assets\script\Attack\weapon.cs" />
@@ -60,6 +74,7 @@
      <Compile Include="Assets\script\system\TitleSystem.cs" />
      <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
      <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
+     <None Include="Assets\TileDraw\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

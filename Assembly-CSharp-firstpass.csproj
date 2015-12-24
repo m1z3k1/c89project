@@ -48,6 +48,7 @@
      <Compile Include="Assets\Plugins\MiniJSON.cs" />
      <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
      <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
+     <None Include="Assets\TileDraw\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

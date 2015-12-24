@@ -5,6 +5,8 @@ Project("{096D1F73-6628-5B81-08D3-1526872CDD84}") = "c89git", "Assembly-CSharp-f
 EndProject
 Project("{096D1F73-6628-5B81-08D3-1526872CDD84}") = "c89git", "Assembly-CSharp.csproj", "{C3FDDCAD-8E3F-70C7-EC44-8FA5CCA2A448}"
 EndProject
+Project("{096D1F73-6628-5B81-08D3-1526872CDD84}") = "c89git", "Assembly-CSharp-Editor.csproj", "{F32E5015-248A-8FFB-AB25-8092FD0C9B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{C3FDDCAD-8E3F-70C7-EC44-8FA5CCA2A448}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3FDDCAD-8E3F-70C7-EC44-8FA5CCA2A448}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3FDDCAD-8E3F-70C7-EC44-8FA5CCA2A448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32E5015-248A-8FFB-AB25-8092FD0C9B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32E5015-248A-8FFB-AB25-8092FD0C9B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32E5015-248A-8FFB-AB25-8092FD0C9B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32E5015-248A-8FFB-AB25-8092FD0C9B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

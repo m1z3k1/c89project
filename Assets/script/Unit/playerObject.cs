@@ -27,7 +27,9 @@ public class playerObject : unit {
             Vector3 position = new Vector3(positionX, positionY, 0);
             GameObject setBullel = (GameObject)Instantiate(bullelData,transform.position,transform.rotation);
             setBullel.transform.parent = this.transform;
-            setBullel.transform.position = position;
+            setBullel.transform.localPosition = position;
+            setBullel.transform.localRotation = Quaternion.Euler(90, 0, 0);
+            setBullel.transform.localScale = new Vector3(1,2,1);
             setBullel.transform.name = "bullel" + bullelNumber;
         }
 	}

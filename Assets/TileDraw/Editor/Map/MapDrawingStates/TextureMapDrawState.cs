@@ -69,7 +69,7 @@ namespace LevelEditor
 
             cell.Tiles[(int)pointInCell.y * Map.NumberOfTiles + (int)pointInCell.x].TextureIndex = _currentTileIndex;
 
-            var texture = (Texture2D)cell.renderer.sharedMaterial.mainTexture;
+            var texture = (Texture2D)cell.GetComponent<Renderer>().sharedMaterial.mainTexture;
 
             // pTexture is point in texture coords
             Vector2 pTexture = pointInCell * Map.TileResolution;

@@ -35,14 +35,14 @@ public class MapManagerEditor : Editor
                 continue;
             }
 
-            EditorUtility.SetSelectedWireframeHidden(cell.renderer, true);
+            EditorUtility.SetSelectedWireframeHidden(cell.GetComponent<Renderer>(), true);
 
             foreach (Tile t in cell.Tiles)
             {
                 var e = t.Entity;
                 if (e != null)
                 {
-                    EditorUtility.SetSelectedWireframeHidden(e.renderer, true);
+                    EditorUtility.SetSelectedWireframeHidden(e.GetComponent<Renderer>(), true);
                 }
                 else
                 {
@@ -63,14 +63,14 @@ public class MapManagerEditor : Editor
         {
             if (cell != null)
             {
-                EditorUtility.SetSelectedWireframeHidden(cell.renderer, false);
+                EditorUtility.SetSelectedWireframeHidden(cell.GetComponent<Renderer>(), false);
 
                 foreach (Tile t in cell.Tiles)
                 {
                     var e = t.Entity;
                     if (e != null)
                     {
-                        EditorUtility.SetSelectedWireframeHidden(e.renderer, false);
+                        EditorUtility.SetSelectedWireframeHidden(e.GetComponent<Renderer>(), false);
                     }
                 }
             }

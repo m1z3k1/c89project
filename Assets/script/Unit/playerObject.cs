@@ -41,8 +41,8 @@ public class playerObject : unit {
 	}
 
     protected override void DestroyEvent()
-    {
+    {      
+        Destroy(transform.FindChild("object").gameObject);
         GameObject.Find("System").gameObject.BroadcastMessage("GameEnd");
-        base.DestroyEvent();
     }
 }

@@ -28,7 +28,7 @@ public class lazer : weapon {
         //始点と終点の2つの座標で線を引く
         lineRenderer.enabled = true;
         lineRenderer.SetVertexCount(2);
-        Transform bullel  = muzzle.parent;
+        //Transform bullel  = muzzle.parent;
         //dir = (muzzle.position - bullel.position).normalized;
         attackPoint = (long)weaponData["attack"] * Time.deltaTime;
     }

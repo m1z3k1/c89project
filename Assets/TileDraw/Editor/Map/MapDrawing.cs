@@ -205,7 +205,7 @@ public class MapDrawing : EditorWindow
                 var p = new Vector2(x, y);
 
                 var cell = Map.GetCellOrCreate(p);
-                EditorUtility.SetSelectedWireframeHidden(cell.renderer, true);
+                EditorUtility.SetSelectedWireframeHidden(cell.GetComponent<Renderer>(), true);
                 _state.DrawAtPoint(cell, p);
             }
         }

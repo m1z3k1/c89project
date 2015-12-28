@@ -1,3 +1,1 @@
-{"player":{"bullel1":{"name":"lazer","positionX":-1,"positionY":2},"bullel2":{"name":"lazer","positionX":1,"positionY":2}},"ReleaseBullelData":{"bullet":true,"lazer":true}}
-
-  
+{"player":{"bullel1":{"name":"lazer","positionX":-1,"positionY":2},"bullel2":{"name":"lazer","positionX":1,"positionY":2}},"ReleaseBullelData":{"bullet":{"use":true,"exp":0},"lazer":{"use":true,"exp":0}}}

@@ -24,7 +24,8 @@ public class customize : MonoBehaviour {
         IDictionary releaseBullels = (IDictionary)allWeaponData["ReleaseBullelData"];
         foreach (DictionaryEntry bul in releaseBullels)
         {
-            if((bool)bul.Value){
+            IDictionary rb = (IDictionary)releaseBullels[bul.Key];
+            if((bool)rb["use"]){
                 string bullelName = (string)bullelData["name"];
                 string weaponName = (string)bul.Key;
                 

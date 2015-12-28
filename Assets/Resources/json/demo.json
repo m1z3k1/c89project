@@ -1,5 +1,6 @@
 {
   "name":"demo",
+  "exp":30,
   "enemyCount":3,
   "enemyLimit":2,
   "enemy":{

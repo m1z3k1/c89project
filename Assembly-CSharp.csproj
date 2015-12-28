@@ -60,6 +60,7 @@
      <Compile Include="Assets\TileDraw\Scripts\Util\Enums.cs" />
      <Compile Include="Assets\TileDraw\Scripts\Util\Util.cs" />
      <Compile Include="Assets\script\Attack\bullet.cs" />
+     <Compile Include="Assets\script\Attack\enemyAttack.cs" />
      <Compile Include="Assets\script\Attack\lazer.cs" />
      <Compile Include="Assets\script\Attack\weapon.cs" />
      <Compile Include="Assets\script\Unit\bullel.cs" />
@@ -73,6 +74,8 @@
      <Compile Include="Assets\script\system\MenuSystem.cs" />
      <Compile Include="Assets\script\system\ResultSystem.cs" />
      <Compile Include="Assets\script\system\TitleSystem.cs" />
+     <Compile Include="Assets\script\system\customize.cs" />
+     <Compile Include="Assets\script\system\miniMap.cs" />
      <None Include="Assets\Panzer_II_Ausf_F\Shaders\Panzer Tracks.shader" />
      <None Include="Assets\Panzer_II_Ausf_F\readme.txt" />
      <None Include="Assets\TileDraw\readme.txt" />

@@ -6,9 +6,9 @@ public class GameSystem : MonoBehaviour {
    
 
 	// Use this for initialization
-	void Start () {
-        gameObject.transform.FindChild("enemyManeger").gameObject.BroadcastMessage("LoadMapData","demo");
+	void Start () {        
         gameObject.transform.FindChild("MapGenerator").gameObject.BroadcastMessage("LoadMapData", "demo");
+        gameObject.transform.FindChild("enemyManeger").gameObject.BroadcastMessage("LoadMapData", "demo");
         GameObject player = (GameObject)Resources.Load("prefabs/unit/player");
         Instantiate(player,Vector3.zero,transform.rotation);
 	}

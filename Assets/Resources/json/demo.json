@@ -1,6 +1,10 @@
 {
   "name":"demo",
+  "enemyCount":3,
+  "enemyLimit":2,
   "enemy":{
-    "name":"tesst"
+    "0":{
+    "name":"testEnemy",
+    }
   }
 }

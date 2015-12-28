@@ -11,6 +11,7 @@ public class playerObject : unit {
 	// Use this for initialization
 	public override void Start () {
         base.Start();
+        transform.name = "player";
         speed = 5;
         hitpoint = 20;
         FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み

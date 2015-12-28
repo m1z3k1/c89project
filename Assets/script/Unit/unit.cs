@@ -36,7 +36,7 @@ public class unit : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         string collisionTag = collision.transform.tag;
-
+        Debug.Log(transform.name + ":" + collisionTag);
         switch(collisionTag){
             case "Attack":
                 collision.gameObject.BroadcastMessage("Attack",this.gameObject);

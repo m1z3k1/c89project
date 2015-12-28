@@ -68,6 +68,7 @@
      <Compile Include="Assets\script\Unit\muzzle.cs" />
      <Compile Include="Assets\script\Unit\playerObject.cs" />
      <Compile Include="Assets\script\Unit\unit.cs" />
+     <Compile Include="Assets\script\system\CustomizeSystem.cs" />
      <Compile Include="Assets\script\system\EnemyManeger.cs" />
      <Compile Include="Assets\script\system\GameSystem.cs" />
      <Compile Include="Assets\script\system\LoadMap.cs" />

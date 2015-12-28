@@ -14,6 +14,7 @@ public class customize : MonoBehaviour {
         FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
         StreamReader weaponInfo = new StreamReader(fi.OpenRead());
         string weaponDataString = weaponInfo.ReadToEnd();//Jsonファイルをstringに変換
+        weaponInfo.Close();
         IDictionary allWeaponData = (IDictionary)Json.Deserialize(weaponDataString);
         IDictionary playerData = (IDictionary)allWeaponData["player"];
         option = gameObject.GetComponent<Dropdown>().options;
@@ -24,11 +25,22 @@ public class customize : MonoBehaviour {
         foreach (DictionaryEntry bul in releaseBullels)
         {
             if((bool)bul.Value){
-                option.Add(new Dropdown.OptionData((string)bul.Key));
+                string bullelName = (string)bullelData["name"];
+                string weaponName = (string)bul.Key;
+                
+                option.Add(new Dropdown.OptionData(weaponName));
+                
             }
             
         }
 	}
+
+    public void save()
+    {
+        Debug.Log(transform.FindChild("Label").GetComponent<Text>().text);
+        string[] data = new string[2] {transform.name,transform.FindChild("Label").GetComponent<Text>().text};
+        GameObject.Find("EventSystem").BroadcastMessage("customize",data);
+    }
 	
 	// Update is called once per frame
 	void Update () {

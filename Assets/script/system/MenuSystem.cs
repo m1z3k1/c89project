@@ -24,4 +24,16 @@ public class MenuSystem : MonoBehaviour {
         }
         async.allowSceneActivation = true;
     }
+
+    IEnumerator Customize()
+    {
+        AsyncOperation async = Application.LoadLevelAsync(4);
+        async.allowSceneActivation = false;
+        while (async.progress < 0.9f)
+        {
+            Debug.Log(async.progress);
+            yield return null;
+        }
+        async.allowSceneActivation = true;
+    }
 }

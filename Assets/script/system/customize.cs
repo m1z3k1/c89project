@@ -21,6 +21,7 @@ public class customize : MonoBehaviour {
         option.Clear();
         IDictionary bullelData = (IDictionary)playerData[transform.name];
         transform.FindChild("Label").GetComponent<Text>().text = (string)bullelData["name"];
+        option.Add(new Dropdown.OptionData((string)bullelData["name"]));
         IDictionary releaseBullels = (IDictionary)allWeaponData["ReleaseBullelData"];
         foreach (DictionaryEntry bul in releaseBullels)
         {

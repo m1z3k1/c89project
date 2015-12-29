@@ -19,12 +19,12 @@ public class playerObject : unit {
         string bullelDataString = bullelInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allBullelData = (IDictionary)Json.Deserialize(bullelDataString);
         allBullelData = (IDictionary)allBullelData["player"];
-        for(int bullelNumber = 1;bullelNumber < 3;bullelNumber++){
+        for(int bullelNumber = 1;bullelNumber <= 7;bullelNumber++){
             IDictionary bullelDataNumber = (IDictionary)allBullelData["bullel" + bullelNumber];
             Debug.Log((string)bullelDataNumber["name"]);
             GameObject bullelData = Resources.Load<GameObject>("prefabs/attack/bullel/" + (string)bullelDataNumber["name"]);
-            float positionX = (float)((long)bullelDataNumber["positionX"]);
-            float positionY = (float)((long)bullelDataNumber["positionY"]);
+            float positionX = (float)((double)bullelDataNumber["positionX"]);
+            float positionY = (float)((double)bullelDataNumber["positionY"]);
             Vector3 position = new Vector3(positionX, positionY, 0);
             GameObject setBullel = (GameObject)Instantiate(bullelData,transform.position,transform.rotation);
             setBullel.transform.parent = this.transform;
@@ -42,8 +42,8 @@ public class playerObject : unit {
 	}
 
     protected override void DestroyEvent()
-    {      
-        Destroy(transform.FindChild("object").gameObject);
+    {
+        Destroy(transform.FindChild("BabyMugunum").gameObject);
         GameObject.Find("System").gameObject.BroadcastMessage("GameEnd");
     }
 }

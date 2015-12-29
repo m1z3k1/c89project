@@ -10,7 +10,7 @@ public class GameSystem : MonoBehaviour {
         gameObject.transform.FindChild("MapGenerator").gameObject.BroadcastMessage("LoadMapData", "demo");
         gameObject.transform.FindChild("enemyManeger").gameObject.BroadcastMessage("LoadMapData", "demo");
         GameObject player = (GameObject)Resources.Load("prefabs/unit/player");
-        Instantiate(player,Vector3.zero,transform.rotation);
+        Instantiate(player,new Vector3(0,3,0),transform.rotation);
 	}
 	
 	// Update is called once per frame

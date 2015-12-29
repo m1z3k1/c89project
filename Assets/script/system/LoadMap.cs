@@ -28,7 +28,7 @@ public class LoadMap : MonoBehaviour {
 
     public void enemyPoint()
     {
-        Transform point = mapTrans.FindChild("creater" + Random.Range(0, 4));
+        Transform point = mapTrans.FindChild("creater" + Random.Range(1, 5));
         GameObject.Find("System/enemyManeger").BroadcastMessage("createEnemy", point);
     }
 

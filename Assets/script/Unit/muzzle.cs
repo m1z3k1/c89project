@@ -15,7 +15,7 @@ public class muzzle : MonoBehaviour {
 	void Update () {
         if (transform.parent.tag == "Player" && Input.GetButtonDown("Fire1"))
         {
-            transform.parent.gameObject.BroadcastMessage("fireCheck",gameObject);
+            transform.parent.transform.parent.gameObject.BroadcastMessage("fireCheck",gameObject);
         }
         else
         {

@@ -19,13 +19,13 @@ public class ResultSystem : MonoBehaviour {
         allWeaponData = (IDictionary)Json.Deserialize(weaponDataString);
         IDictionary bullelsData = (IDictionary)allWeaponData["releaseWeaponData"];
         playerData = (IDictionary)allWeaponData["player"];
-        foreach(DictionaryEntry bul in playerData){
+        /*foreach(DictionaryEntry bul in playerData){
             IDictionary b = (IDictionary)playerData[bul.Key];
             IDictionary bd = (IDictionary)bullelsData[(string)b["name"]];
             int exp = PlayerPrefs.GetInt("stageExp");
             int weaponExp = (int)((long)bd["exp"]);
             bd["exp"] = weaponExp + exp;
-        }
+        }*/
 	}
 	
 	// Update is called once per frame

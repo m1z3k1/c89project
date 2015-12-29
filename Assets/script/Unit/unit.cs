@@ -22,7 +22,6 @@ public class unit : MonoBehaviour {
     public void Damage(float attack)
     {
         hitpoint -= attack;
-        Debug.Log(hitpoint);
         if(hitpoint <= 0){
             this.DestroyEvent();
         }
@@ -36,7 +35,6 @@ public class unit : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         string collisionTag = collision.transform.tag;
-        Debug.Log(transform.name + ":" + collisionTag);
         switch(collisionTag){
             case "Attack":
                 collision.gameObject.BroadcastMessage("Attack",this.gameObject);

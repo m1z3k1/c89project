@@ -6,13 +6,13 @@ using MiniJSON;
 
 public class playerObject : unit {
 
-    
+    private float baseSpeed = 5;
 
 	// Use this for initialization
 	public override void Start () {
         base.Start();
         transform.name = "player";
-        speed = 5;
+        speed = baseSpeed;
         hitpoint = 20;
         FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
         StreamReader bullelInfo = new StreamReader(fi.OpenRead());
@@ -25,7 +25,7 @@ public class playerObject : unit {
             GameObject bullelData = Resources.Load<GameObject>("prefabs/attack/bullel/" + (string)bullelDataNumber["name"]);
             float positionX = (float)((double)bullelDataNumber["positionX"]);
             float positionY = (float)((double)bullelDataNumber["positionY"]);
-            Vector3 position = new Vector3(positionX, positionY, 0);
+            Vector3 position = new Vector3(positionX, positionY, 1.5f);
             GameObject setBullel = (GameObject)Instantiate(bullelData,transform.position,transform.rotation);
             setBullel.transform.parent = this.transform;
             setBullel.transform.localPosition = position;
@@ -37,7 +37,12 @@ public class playerObject : unit {
 	
 	// Update is called once per frame
 	public override void Update () {
-        vec =  new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        speed = Input.GetAxisRaw("Vertical") * baseSpeed;
+        transform.Rotate(0, Input.GetAxis("Horizontal"), 0);
+        //vec =  new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        // 自身の向きベクトル取得
+        float angleDir = transform.eulerAngles.y * (Mathf.PI / 180.0f);
+        vec = new Vector3(Mathf.Sin(angleDir),0.0f , Mathf.Cos(angleDir));
         base.Update();      
 	}
 

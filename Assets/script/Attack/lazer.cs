@@ -31,6 +31,7 @@ public class lazer : weapon {
         //Transform bullel  = muzzle.parent;
         //dir = (muzzle.position - bullel.position).normalized;
         attackPoint = (long)weaponData["attack"] * Time.deltaTime;
+        gameObject.GetComponent<ParticleSystem>().Play();
     }
 	
 	// Update is called once per frame

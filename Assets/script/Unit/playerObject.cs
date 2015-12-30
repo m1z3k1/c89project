@@ -24,7 +24,6 @@ public class playerObject : unit {
         allBullelData = (IDictionary)allBullelData["player"];
         for(int bullelNumber = 1;bullelNumber <= 7;bullelNumber++){
             IDictionary bullelDataNumber = (IDictionary)allBullelData["bullel" + bullelNumber];
-            Debug.Log((string)bullelDataNumber["name"]);
             GameObject bullelData = Resources.Load<GameObject>("prefabs/attack/bullel/" + (string)bullelDataNumber["name"]);
             float positionX = 0.0f;
             try

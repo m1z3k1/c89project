@@ -29,7 +29,7 @@ public class GameSystem : MonoBehaviour {
             yield return null;
         }
 
-        gameObject.transform.FindChild("MapGenerator").BroadcastMessage("setEXP");
+        //gameObject.transform.FindChild("MapGenerator").BroadcastMessage("setEXP");
 
         async.allowSceneActivation = true;
     }

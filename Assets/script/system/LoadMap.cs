@@ -3,11 +3,13 @@ using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using MiniJSON;
+using System;
 
 public class LoadMap : MonoBehaviour {
 
     Transform mapTrans;
     private int exp;
+    private bool[] notCreate = new bool[4];
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +30,15 @@ public class LoadMap : MonoBehaviour {
 
     public void enemyPoint()
     {
-        Transform point = mapTrans.FindChild("creater" + Random.Range(1, 5));
+        int createPoint; 
+        if(Array.IndexOf(notCreate,false) == -1){
+            notCreate.Initialize();
+        }
+        do{
+           createPoint = UnityEngine.Random.Range(1, 5);
+        } while (notCreate[createPoint - 1]);
+        notCreate[createPoint - 1] = true;
+        Transform point = mapTrans.FindChild("creater" + createPoint);
         GameObject.Find("System/enemyManeger").BroadcastMessage("createEnemy", point);
     }
 

@@ -12,11 +12,10 @@ public class enemy : unit {
 
     public override void Update()
     {
-        Vector3 playerPosition = GameObject.Find("player").transform.position;
+        Transform player = GameObject.Find("player").transform;
+        Vector3 playerPosition = player.position;
         vec = (playerPosition - transform.position).normalized;
-        Vector3 diff = playerPosition - transform.position;
-        float deg = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(deg, deg, 0);
+        transform.LookAt(player);
         base.Update();
     }
 

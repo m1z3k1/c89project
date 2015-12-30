@@ -16,7 +16,7 @@ public class LoadMap : MonoBehaviour {
 
     void LoadMapData(string stageData)
     {
-        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/" + stageData + ".json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/data/" + stageData + ".json");//Jsonファイルの読み込み
         StreamReader mapInfo = new StreamReader(fi.OpenRead());
         string mapDataString = mapInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary mapData = (IDictionary)Json.Deserialize(mapDataString);

@@ -22,7 +22,7 @@ public class bullel : MonoBehaviour {
             Vector3 mousePos = ray.origin;
 
             // マウスから矢印へのベクトルを正規化  (2)
-            Vector3 diff = mousePos - transform.position;
+            Vector3 diff = mousePos - transform.parent.position;
             //Vector3 norm = diff.normalized;
 
             // マウスの方向を向かせる (4)

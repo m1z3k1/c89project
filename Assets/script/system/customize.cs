@@ -11,7 +11,7 @@ public class customize : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/data/saveData.json");//Jsonファイルの読み込み
         StreamReader weaponInfo = new StreamReader(fi.OpenRead());
         string weaponDataString = weaponInfo.ReadToEnd();//Jsonファイルをstringに変換
         weaponInfo.Close();

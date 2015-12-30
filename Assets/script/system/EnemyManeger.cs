@@ -18,7 +18,7 @@ public class EnemyManeger : MonoBehaviour {
     void LoadMapData(string stageData)
     {
         enemyList = new List<GameObject>();
-        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/" + stageData +".json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/data/" + stageData +".json");//Jsonファイルの読み込み
         StreamReader enemyInfo = new StreamReader(fi.OpenRead());
         string enemyDataString = enemyInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allEnemyData = (IDictionary)Json.Deserialize(enemyDataString);

@@ -3,18 +3,21 @@ using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using MiniJSON;
+using System;
 
 public class playerObject : unit {
 
-    private float baseSpeed = 5;
+    private float baseSpeed = 10;
+    private bool live;
 
 	// Use this for initialization
 	public override void Start () {
         base.Start();
+        live = true;
         transform.name = "player";
         speed = baseSpeed;
         hitpoint = 20;
-        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/json/saveData.json");//Jsonファイルの読み込み
+        FileInfo fi = new FileInfo(Application.dataPath + "/Resources/data/saveData.json");//Jsonファイルの読み込み
         StreamReader bullelInfo = new StreamReader(fi.OpenRead());
         string bullelDataString = bullelInfo.ReadToEnd();//Jsonファイルをstringに変換
         IDictionary allBullelData = (IDictionary)Json.Deserialize(bullelDataString);
@@ -23,9 +26,26 @@ public class playerObject : unit {
             IDictionary bullelDataNumber = (IDictionary)allBullelData["bullel" + bullelNumber];
             Debug.Log((string)bullelDataNumber["name"]);
             GameObject bullelData = Resources.Load<GameObject>("prefabs/attack/bullel/" + (string)bullelDataNumber["name"]);
-            float positionX = (float)((double)bullelDataNumber["positionX"]);
-            float positionY = (float)((double)bullelDataNumber["positionY"]);
-            Vector3 position = new Vector3(positionX, positionY, 1.5f);
+            float positionX = 0.0f;
+            try
+            {
+                positionX = (float)((double)bullelDataNumber["positionX"]);
+            }
+            catch (InvalidCastException e)
+            {
+                positionX = (float)((long)bullelDataNumber["positionX"]);
+            }
+
+            float positionY = 0;
+            try
+            {
+                positionY = (float)((double)bullelDataNumber["positionY"]);
+            }
+            catch (InvalidCastException e)
+            {
+                positionY = (float)((long)bullelDataNumber["positionY"]);
+            }
+            Vector3 position = new Vector3(positionX, positionY, 2.5f);
             GameObject setBullel = (GameObject)Instantiate(bullelData,transform.position,transform.rotation);
             setBullel.transform.parent = this.transform;
             setBullel.transform.localPosition = position;
@@ -49,6 +69,10 @@ public class playerObject : unit {
     protected override void DestroyEvent()
     {
         Destroy(transform.FindChild("BabyMugunum").gameObject);
-        GameObject.Find("System").gameObject.BroadcastMessage("GameEnd");
+        if (live)
+        {
+            GameObject.Find("System").gameObject.BroadcastMessage("GameEnd");
+            live = false;
+        }
     }
 }

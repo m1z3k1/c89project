@@ -1,0 +1,11 @@
+{
+  "name":"demo",
+  "exp":30,
+  "enemyCount":20,
+  "enemyLimit":3,
+  "enemy":{
+    "0":{
+    "name":"testEnemy",
+    }
+  }
+}
